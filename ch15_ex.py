@@ -1,6 +1,7 @@
 import numpy
 
+# 例1
 print((numpy.arange(1,10)*numpy.arange(1,10)[:,numpy.newaxis]).tolist())
 
-#以下でも構わない
+# 例2
 print(numpy.arange(1,10)*numpy.arange(1,10)[:,numpy.newaxis])
