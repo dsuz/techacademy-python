@@ -1,19 +1,20 @@
-#リストの情報をタプル化して順番を含めるようにしよう
+# coding:utf-8
+#import tkinter as tk
+#import tkinter.filedialog as fd
 
-#リストにいくつかの値が存在するものとします。例えばここでは hoge, foo, bar とします
-#これを zip 、 range を必ず使用しましょう
-#ここでの順番は1から開始するものとします
-#出力結果: [(1, 'hoge'),(2, 'foo'),(3, 'bar')]
+#root = tk.Tk()
+#root.withdraw()
 
-#1から連番をつける
-x=range(1,4)
-y=("hoge","foo","bar")
+f = open('ch13.txt')
+data = f.read()
 
-#zipは複数リストをまとめる。テキストP191
-zip_obj=zip(x,y)
-xy=tuple(zip_obj)
+words = {}
+for word in data.split():
+    words[word] = words.get(word, 0) + 1
 
-print('[', end='')
-for x in xy:
-    print(x, end=',')
-print('\b]')
+# sort by count
+d = [(v,k) for k,v in words.items()]
+d.sort()
+d.reverse()
+for count, word in d:
+    print(count, word)

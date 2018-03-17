@@ -11,4 +11,4 @@ y_train, y_test = y[:n_train], y[n_train:]
 clf = svm.SVC()
 print(y_train[:10]) # 配列の先頭 10 個を出力する
 clf.fit(x_train, y_train)
-print (clf.score(x_test, y_test));
+print (clf.score(x_test, y_test))
